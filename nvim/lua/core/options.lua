@@ -13,3 +13,5 @@ vim.api.nvim_create_autocmd("CursorHold", {
     vim.diagnostic.open_float(nil, { focus = false })
   end
 })
+
+vim.cmd[[colorscheme tokyonight-night]]

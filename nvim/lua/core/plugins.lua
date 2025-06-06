@@ -21,6 +21,8 @@ vim.cmd [[
 
   Plug 'ray-x/lsp_signature.nvim'
 
+  Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+
   call plug#end()
 ]]
 
