@@ -19,6 +19,8 @@ vim.cmd [[
   Plug 'hrsh7th/vim-vsnip'
   Plug 'rafamadriz/friendly-snippets'
 
+  Plug 'ray-x/lsp_signature.nvim'
+
   call plug#end()
 ]]
 
@@ -26,3 +28,4 @@ vim.cmd [[
 require("plugins.lsp")
 require("plugins.cmp")
 require("plugins.telescope")
+require("plugins.lsp_signature")
