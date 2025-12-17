@@ -1,7 +1,6 @@
-local lspconfig = require("lspconfig")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-lspconfig.clangd.setup {
+vim.lsp.config.clangd = {
   cmd = { "clangd", "--clang-tidy", "--background-index" },
   capabilities = capabilities,
   on_attach = function(_, bufnr)
@@ -20,3 +19,5 @@ lspconfig.clangd.setup {
     keymap('n', ']d', vim.diagnostic.goto_next, opts)
   end,
 }
+
+vim.lsp.enable('clangd')
