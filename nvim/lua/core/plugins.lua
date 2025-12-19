@@ -23,6 +23,8 @@ vim.cmd [[
 
   Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
+  Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+
   call plug#end()
 ]]
 
@@ -31,3 +33,4 @@ require("plugins.lsp")
 require("plugins.cmp")
 require("plugins.telescope")
 require("plugins.lsp_signature")
+require("plugins.toggleterm")
