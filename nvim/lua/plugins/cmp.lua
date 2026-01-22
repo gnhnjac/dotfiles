@@ -27,3 +27,33 @@ cmp.setup({
     { name = "buffer" },
   }),
 })
+
+-- 1. Create a toggle function
+local function toggle_auto_popup()
+  -- Check the current config state
+  local current_setting = cmp.get_config().completion.autocomplete
+  
+  if current_setting and #current_setting > 0 then
+    -- If currently ON, turn it OFF
+    cmp.setup({
+      completion = {
+        autocomplete = false
+      }
+    })
+    print("Autocomplete: Manual Mode (<C-Space> to trigger)")
+  else
+    -- If currently OFF, turn it ON (reset to default events)
+    cmp.setup({
+      completion = {
+        autocomplete = {
+          require('cmp.types').cmp.TriggerEvent.InsertEnter,
+          require('cmp.types').cmp.TriggerEvent.TextChanged,
+        }
+      }
+    })
+    print("Autocomplete: Auto-Popup Mode")
+  end
+end
+
+-- 2. Bind it to a key (e.g., Leader + ta)
+vim.keymap.set('n', '<Leader>ta', toggle_auto_popup, { desc = "Toggle Autocomplete Popup" })
