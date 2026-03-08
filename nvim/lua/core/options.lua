@@ -15,4 +15,17 @@ vim.api.nvim_create_autocmd("CursorHold", {
   end
 })
 
+vim.api.nvim_create_autocmd("TextYankPost", { callback = function() vim.highlight.on_yank() end })
+
+vim.opt.showmode = false
+
+require("tokyonight").setup({
+  styles = {
+    keywords = { italic = true },   -- This makes 'self', 'if', 'return' cursive
+    functions = { italic = true },  -- This makes function names cursive
+    variables = { italic = false }, -- Keep these normal for readability
+    comments = { italic = true },    -- Makes your notes look elegant
+  },
+})
+
 vim.cmd[[colorscheme tokyonight-night]]

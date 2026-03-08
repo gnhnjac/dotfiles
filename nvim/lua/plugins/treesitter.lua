@@ -16,6 +16,7 @@ treesitter.setup({
     "markdown_inline",
     "bash",
     "python",
+    "yaml",
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)

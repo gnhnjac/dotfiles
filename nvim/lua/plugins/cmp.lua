@@ -2,12 +2,15 @@ local cmp = require("cmp")
 
 cmp.setup({
   completion = {
-    autocomplete = true,
+    -- FIX 1: Use the table of trigger events instead of 'true'
+    autocomplete = {
+      require('cmp.types').cmp.TriggerEvent.TextChanged,
+    },
     completeopt = "menu,menuone,noinsert",
     keyword_length = 2,
   },
   performance = {
-    max_view_entries = 5, -- Limit number of suggestions
+    max_view_entries = 5,
   },
   snippet = {
     expand = function(args)
@@ -22,20 +25,25 @@ cmp.setup({
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
-    { name = "codecompanion" },
     { name = "nvim_lsp" },
     { name = "vsnip" },
     { name = "buffer" },
   }),
 })
 
--- 1. Create a toggle function
+-- Specific config for codecompanion to fix the autocomplete
+cmp.setup.filetype("codecompanion", {
+  completion = {
+    keyword_length = 1,
+  },
+})
+
+-- 2. Corrected Toggle Function
 local function toggle_auto_popup()
-  -- Check the current config state
   local current_setting = cmp.get_config().completion.autocomplete
   
-  if current_setting and #current_setting > 0 then
-    -- If currently ON, turn it OFF
+  -- Check if autocomplete is currently enabled (it will be a table, not 'true')
+  if current_setting and type(current_setting) == "table" then
     cmp.setup({
       completion = {
         autocomplete = false
@@ -43,11 +51,9 @@ local function toggle_auto_popup()
     })
     print("Autocomplete: Manual Mode (<C-Space> to trigger)")
   else
-    -- If currently OFF, turn it ON (reset to default events)
     cmp.setup({
       completion = {
         autocomplete = {
-          require('cmp.types').cmp.TriggerEvent.InsertEnter,
           require('cmp.types').cmp.TriggerEvent.TextChanged,
         }
       }
@@ -56,5 +62,7 @@ local function toggle_auto_popup()
   end
 end
 
--- 2. Bind it to a key (e.g., Leader + ta)
-vim.keymap.set('n', '<Leader>ta', toggle_auto_popup, { desc = "Toggle Autocomplete Popup" })
+-- 3. Binding to <leader>ta
+vim.keymap.set("n", "<leader>ta", toggle_auto_popup, { desc = "Toggle Autocomplete" })
+
+

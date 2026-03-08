@@ -27,6 +27,10 @@ vim.cmd [[
   Plug 'stevearc/dressing.nvim'
   Plug 'olimorris/codecompanion.nvim'
 
+  Plug 'nvim-tree/nvim-web-devicons'
+  Plug 'lukas-reineke/indent-blankline.nvim'
+  Plug 'nvim-lualine/lualine.nvim'
+  Plug 'yamatsum/nvim-cursorline'
   call plug#end()
 ]]
 
@@ -38,3 +42,7 @@ require("plugins.lsp_signature")
 require("plugins.toggleterm")
 require("plugins.codecompanion")
 require("plugins.treesitter")
+require("plugins.indent-blankline")
+require("plugins.lualine")
+require("plugins.cursorline")
+

@@ -1,4 +1,7 @@
 require("codecompanion").setup({
+  opts = {
+    log_level = "ERROR", -- This hides [WARN] messages from the prompt library
+  },
   -- 1. Define your custom adapters here
   adapters = {
     -- The CLI version for Chat (\ac)
@@ -13,8 +16,18 @@ require("codecompanion").setup({
   -- 2. This tells the plugin WHICH adapter to use for WHICH task
   -- Using both 'strategies' and 'adapters' handles transitions between plugin versions
   interactions = {
-    chat = { adapter = "gemini_cli" },
-    agent = { adapter = "gemini_cli" },
+    chat = { 
+      adapter = "gemini_cli",
+      opts = {
+        completion_provider = "cmp",
+      },
+    },
+    agent = { 
+      adapter = "gemini_cli",
+      opts = {
+        completion_provider = "cmp",
+      },
+    },
   },
 })
 
