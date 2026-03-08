@@ -3,8 +3,7 @@
 vim.cmd [[
   call plug#begin()
 
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
+  Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'main', 'do': ':TSUpdate'}
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim', { 'branch': 'master' }
   Plug 'neovim/nvim-lspconfig'
@@ -25,6 +24,9 @@ vim.cmd [[
 
   Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
+  Plug 'stevearc/dressing.nvim'
+  Plug 'olimorris/codecompanion.nvim'
+
   call plug#end()
 ]]
 
@@ -34,3 +36,5 @@ require("plugins.cmp")
 require("plugins.telescope")
 require("plugins.lsp_signature")
 require("plugins.toggleterm")
+require("plugins.codecompanion")
+require("plugins.treesitter")

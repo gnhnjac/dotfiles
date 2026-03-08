@@ -31,3 +31,17 @@ keymap('t', '<Esc>', '<C-\\><C-n>')
 -- Regular keybindings
 keymap('n', '{', '{zz')
 keymap('n', '}', '}zz')
+
+-- Grouping CodeCompanion under <leader>a (for AI/Assistant)
+
+-- Open the AI Actions menu (Explaining code, writing tests, etc.)
+vim.keymap.set({ "n", "v" }, "<leader>aa", "<cmd>CodeCompanionActions<cr>", { noremap = true, silent = true })
+
+-- Toggle the AI Chat buffer
+vim.keymap.set({ "n", "v" }, "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", { noremap = true, silent = true })
+
+-- Trigger inline AI prompt (e.g., "refactor this function")
+vim.keymap.set("n", "<leader>ai", "<cmd>CodeCompanion<cr>", { noremap = true, silent = true })
+
+-- Send visually selected text to the chat buffer
+vim.keymap.set("v", "<leader>as", "<cmd>CodeCompanionChat Add<cr>", { noremap = true, silent = true })
