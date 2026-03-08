@@ -22,6 +22,7 @@ cmp.setup({
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
+    { name = "codecompanion" },
     { name = "nvim_lsp" },
     { name = "vsnip" },
     { name = "buffer" },
