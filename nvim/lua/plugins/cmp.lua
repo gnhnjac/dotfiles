@@ -2,7 +2,7 @@ local cmp = require("cmp")
 
 cmp.setup({
   completion = {
-    autocomplete = false,
+    autocomplete = true,
     completeopt = "menu,menuone,noinsert",
     keyword_length = 2,
   },
