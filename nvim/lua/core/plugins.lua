@@ -25,7 +25,6 @@ vim.cmd [[
   Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 
   Plug 'stevearc/dressing.nvim'
-  Plug 'olimorris/codecompanion.nvim'
 
   Plug 'nvim-tree/nvim-web-devicons'
   Plug 'lukas-reineke/indent-blankline.nvim'
@@ -40,7 +39,6 @@ require("plugins.cmp")
 require("plugins.telescope")
 require("plugins.lsp_signature")
 require("plugins.toggleterm")
-require("plugins.codecompanion")
 require("plugins.treesitter")
 require("plugins.indent-blankline")
 require("plugins.lualine")

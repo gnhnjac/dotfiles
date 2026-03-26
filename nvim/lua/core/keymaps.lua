@@ -40,11 +40,3 @@ keymap("n", "<leader>fs", function()
   require("telescope.builtin").lsp_workspace_symbols()
 end, { desc = "Search workspace symbols" })
 
--- ============================================================================
--- CodeCompanion (AI Assistant)
--- ============================================================================
-keymap({ "n", "v" }, "<leader>aa", "<cmd>CodeCompanionActions<cr>", { desc = "AI Actions", noremap = true, silent = true })
-keymap({ "n", "v" }, "<leader>ac", "<cmd>CodeCompanionChat Toggle<cr>", { desc = "AI Chat Toggle", noremap = true, silent = true })
-keymap("v", "<leader>as", "<cmd>CodeCompanionChat Add<cr>", { desc = "Add to AI Chat", noremap = true, silent = true })
-
--- Note: LSP keymaps for clangd are set inside lsp.lua on_attach
