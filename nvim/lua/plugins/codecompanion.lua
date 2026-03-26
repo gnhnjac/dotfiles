@@ -4,6 +4,7 @@ require("codecompanion").setup({
   },
   -- 1. Define your custom adapters here
   adapters = {
+    acp = {
     -- The CLI version for Chat (\ac)
     gemini_cli = function()
       return require("codecompanion.adapters").extend("gemini_cli", {
@@ -11,6 +12,7 @@ require("codecompanion").setup({
         args = { "--experimental-acp" },
       })
     end,
+    },
   },
 
   -- 2. This tells the plugin WHICH adapter to use for WHICH task
