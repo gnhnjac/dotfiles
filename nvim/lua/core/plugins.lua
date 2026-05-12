@@ -30,6 +30,7 @@ vim.cmd [[
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'yamatsum/nvim-cursorline'
+  Plug 'lervag/vimtex'
   call plug#end()
 ]]
 
@@ -43,4 +44,5 @@ require("plugins.treesitter")
 require("plugins.indent-blankline")
 require("plugins.lualine")
 require("plugins.cursorline")
+require("plugins.vimtex")
 
