@@ -17,13 +17,14 @@ treesitter.setup({
     "bash",
     "python",
     "yaml",
+    "latex",
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
 
   -- List of parsers to ignore installing
-  ignore_install = { "latex" },
+  ignore_install = {},
 
   -- Automatically install missing parsers when entering buffer
   auto_install = true,

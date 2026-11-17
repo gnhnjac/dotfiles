@@ -27,6 +27,19 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = "vsnip" },
+    { name = "path" },
+    { name = "buffer" },
+  }),
+})
+
+-- LaTeX-specific autocomplete configuration
+cmp.setup.filetype({ "tex", "latex", "plaintex" }, {
+  sources = cmp.config.sources({
+    { name = "vimtex" },
+    { name = "latex_symbols", option = { strategy = 0 } },
+    { name = "vsnip" },
+    { name = "nvim_lsp" },
+    { name = "path" },
     { name = "buffer" },
   }),
 })

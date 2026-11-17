@@ -30,3 +30,13 @@ vim.g.vimtex_toc_config = {
 
 -- Ensure syntax highlighting is enabled for LaTeX
 vim.g.vimtex_syntax_enabled = 1
+
+-- Do not automatically pop open quickfix on minor warnings (e.g. font warnings, underfull hbox)
+-- Quickfix will only open on actual errors
+vim.g.vimtex_quickfix_open_on_warning = 0
+
+-- Keymaps (VimTeX default is <localleader>ll, which is \ll by default)
+-- Also bind <leader> shortcuts for convenience
+vim.keymap.set("n", "<leader>ll", "<cmd>VimtexCompile<cr>", { desc = "VimTeX: Toggle continuous compilation" })
+vim.keymap.set("n", "<leader>lv", "<cmd>VimtexView<cr>", { desc = "VimTeX: Forward search to cursor in Zathura" })
+vim.keymap.set("n", "<leader>lc", "<cmd>VimtexClean<cr>", { desc = "VimTeX: Clean auxiliary files" })
