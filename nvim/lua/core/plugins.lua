@@ -33,7 +33,6 @@ vim.cmd [[
   Plug 'lervag/vimtex'
   Plug 'micangl/cmp-vimtex'
   Plug 'kdheepak/cmp-latex-symbols'
-  Plug 'jbyuki/nabla.nvim'
   call plug#end()
 ]]
 
@@ -48,5 +47,4 @@ require("plugins.indent-blankline")
 require("plugins.lualine")
 require("plugins.cursorline")
 require("plugins.vimtex")
-pcall(require, "plugins.nabla")
 
